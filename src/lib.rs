@@ -14,7 +14,8 @@ impl darling::PackageManager for Pacman {
         _context: &darling::Context,
         package: &darling::InstallationEntry,
     ) -> anyhow::Result<Option<String>> {
-        std::process::Command::new("pacman")
+        std::process::Command::new("sudo")
+            .arg("pacman")
             .arg("-S")
             .arg(&package.name)
             .spawn()?;
@@ -26,7 +27,8 @@ impl darling::PackageManager for Pacman {
         _context: &darling::Context,
         package: &darling::InstallationEntry,
     ) -> anyhow::Result<()> {
-        std::process::Command::new("pacman")
+        std::process::Command::new("sudo")
+            .arg("pacman")
             .arg("-Rcns")
             .arg(&package.name)
             .spawn()?;
