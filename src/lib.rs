@@ -18,7 +18,7 @@ impl darling::PackageManager for Pacman {
             .arg("pacman")
             .arg("-S")
             .arg(&package.name)
-            .spawn()?;
+            .status()?;
         Ok(None)
     }
 
@@ -31,7 +31,7 @@ impl darling::PackageManager for Pacman {
             .arg("pacman")
             .arg("-Rcns")
             .arg(&package.name)
-            .spawn()?;
+            .status()?;
         Ok(())
     }
 
