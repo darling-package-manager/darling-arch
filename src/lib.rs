@@ -1,8 +1,8 @@
 use darling_packages as darling;
 
-static PACKAGE_MANAGER: Pacman = Pacman;
+pub static PACKAGE_MANAGER: Pacman = Pacman;
 
-struct Pacman;
+pub struct Pacman;
 
 impl darling::PackageManager for Pacman {
     fn name(&self) -> String {
