@@ -35,7 +35,10 @@ impl darling::PackageManager for Pacman {
         Ok(())
     }
 
-    fn get_all_explicit(&self, _context: &darling::Context) -> anyhow::Result<Vec<String>> {
+    fn get_all_explicit(
+        &self,
+        _context: &darling::Context,
+    ) -> anyhow::Result<Vec<(String, String)>> {
         Ok(String::from_utf8(
             std::process::Command::new("pacman")
                 .arg("-Qt")
@@ -43,7 +46,10 @@ impl darling::PackageManager for Pacman {
                 .stdout,
         )?
         .lines()
-        .map(|line| line.to_owned())
+        .map(|line| {
+            let splits = line.split(' ').collect::<Vec<_>>();
+            (splits[0].to_owned(), splits[1].to_owned())
+        })
         .collect())
     }
 }
