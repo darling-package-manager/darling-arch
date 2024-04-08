@@ -1,5 +1,5 @@
 [package]
-name = "darling-arch"
+name = "darling_arch"
 version = "0.1.1"
 edition = "2021"
 authors = ["Violet Iapalucci"]
