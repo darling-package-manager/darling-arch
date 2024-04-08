@@ -1,4 +1,4 @@
-use darling_packages as darling;
+use darling_api as darling;
 
 pub static PACKAGE_MANAGER: Pacman = Pacman;
 

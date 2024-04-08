@@ -1,6 +1,6 @@
 [package]
-name = "darling_arch"
-version = "0.1.1"
+name = "darling-arch"
+version = "0.1.2"
 edition = "2021"
 authors = ["Violet Iapalucci"]
 license = "MIT"
@@ -10,4 +10,4 @@ description = "A darling implementation for Arch Linux's pacman."
 
 [dependencies]
 anyhow = "1.0.81"
-darling_packages = "0.1.0"
+darling-api = "0.1.0"
