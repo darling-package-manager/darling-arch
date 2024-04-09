@@ -26,7 +26,7 @@ impl darling::PackageManager for Pacman {
     }
 
     fn get_all_explicit(&self, _context: &darling::Context) -> anyhow::Result<Vec<(String, String)>> {
-        Ok(String::from_utf8(std::process::Command::new("pacman").arg("-Qt").output()?.stdout)?
+        Ok(String::from_utf8(std::process::Command::new("pacman").arg("-Qe").output()?.stdout)?
             .lines()
             .map(|line| {
                 let splits = line.split(' ').collect::<Vec<_>>();
