@@ -10,16 +10,16 @@ checksum = "0952808a6c2afd1aa8947271f3a60f1a6763c7b912d210184c5149b5cf147247"
 
 [[package]]
 name = "darling-api"
-version = "0.1.1"
+version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d538b887416cd92a4d7477e19d6fd82a8f88f43d9e3546571af16520bb08b806"
+checksum = "80301c8102818ee043aad3209c57a82ed3af0511283f9ba50d7e614d0e3c823b"
 dependencies = [
  "anyhow",
 ]
 
 [[package]]
 name = "darling-arch"
-version = "0.1.7"
+version = "0.1.8"
 dependencies = [
  "anyhow",
  "darling-api",

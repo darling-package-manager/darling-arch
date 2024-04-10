@@ -9,7 +9,7 @@ impl darling::PackageManager for Pacman {
         "arch".to_owned()
     }
 
-    fn install(&self, _context: &darling::Context, package: &darling::InstallationEntry) -> anyhow::Result<Option<String>> {
+    fn install(&self, _context: &darling::Context, package: &darling::InstallationEntry) -> anyhow::Result<()> {
         std::process::Command::new("sudo")
             .arg("pacman")
             .arg("-S")
@@ -17,7 +17,7 @@ impl darling::PackageManager for Pacman {
             .arg(&package.name)
             .stdout(std::process::Stdio::null())
             .status()?;
-        Ok(None)
+        Ok(())
     }
 
     fn uninstall(&self, _context: &darling::Context, package: &darling::InstallationEntry) -> anyhow::Result<()> {
